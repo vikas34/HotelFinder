@@ -1,6 +1,7 @@
 import React from 'react'
 import Hero from '../Components/Hero.jsx'
 import FeatureDestination from '../Components/FeatureDestination.jsx'
+import ExclusiveOffer from '../Components/ExclusiveOffer.jsx'
 
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
     <>
       <Hero/>
       <FeatureDestination/>
+      <ExclusiveOffer/>
     </>
   )
 }

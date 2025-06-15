@@ -8,7 +8,7 @@ const FeatureDestination = () => {
 
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slate-150 py-20">
+    <div className="flex flex-col items-center px-6 md:px-16 lg:px-24 bg-slate-100 py-20">
       <Title
         title="Feature Destination"
         subTitle="Discover our handpicked selection of exceptional properties around the world, offering
