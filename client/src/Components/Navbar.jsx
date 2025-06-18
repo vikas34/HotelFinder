@@ -61,14 +61,19 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-500 z-50 ${
         isScrolled
-          ? "bg-white/80 shadow-md text-gray-700 backdrop-blur-lg py-3 md:py-4"
+          ? "bg-white/80 shadow-md text-gray-700 backdrop-blur-lg py-3 md:py-3"
           : "py-4 md:py-6"
       }`}
     >
       {/* Logo */}
 
       <Link to="/" className="flex items-center gap-2">
-        {<img src={"logo.png"} className=" w-35 md:w-45" />}
+        {
+          <img
+            src={"logo.png"}
+            className=" w-34 sm:w-35 md:w-45 lg:w-48 xl:w-48 p-3 max-w-full h-auto"
+          />
+        }
       </Link>
 
       {/* Desktop Nav */}
@@ -78,7 +83,7 @@ const Navbar = () => {
           <a
             key={i}
             href={link.path}
-            className={`group flex flex-col gap-0.5 ${
+            className={`group flex flex-col gap-0.5  ${
               isScrolled ? "text-gray-700" : "text-white"
             }`}
           >
@@ -92,7 +97,7 @@ const Navbar = () => {
         ))}
         <button
           onClick={() => navigate("/owner")}
-          className={`border px-4 py-2 text-sm font-light rounded-full cursor-pointer ${
+          className={`border px-4 py-2 text-sm font-light rounded-full cursor-pointer  ${
             isScrolled ? "text-black" : "text-white"
           } transition-all hover:bg-black hover:text-white hover:border-none`}
         >
@@ -124,7 +129,7 @@ const Navbar = () => {
         ) : (
           <button
             onClick={openSignIn}
-            className="bg-black text-white px-8 py-2.5 rounded-full ml-4 transition-all duration-500 cursor-pointer"
+            className="bg-black text-white px-7 py-2 rounded-full ml-4 transition-all duration-500 cursor-pointer"
           >
             Login
           </button>
@@ -146,11 +151,11 @@ const Navbar = () => {
           </UserButton>
         )}
 
-        <img 
+        <img
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           src={assets.menuIcon}
           alt="menu-icon"
-          className={`${isScrolled && "invert " }  h-4 cursor-pointer` }
+          className={`${isScrolled && "invert "}  h-4 cursor-pointer`}
         />
       </div>
 
@@ -165,7 +170,11 @@ const Navbar = () => {
           className="absolute top-4 right-4 "
           onClick={() => setIsMenuOpen(false)}
         >
-          <img src={assets.closeIcon} alt="close-menu " className="h-6.5 cursor-pointer" />
+          <img
+            src={assets.closeIcon}
+            alt="close-menu "
+            className="h-6.5 cursor-pointer"
+          />
         </button>
 
         {navLinks.map((link, i) => (
