@@ -4,6 +4,8 @@ import {useLocation, Routes, Route} from 'react-router-dom'
 import Home from './Pages/Home.jsx'
 import Footer from './Components/Footer.jsx'
 import AllRooms from './Pages/AllRooms.jsx'
+import Roomdetails from './Pages/Roomdetails.jsx'
+
 
 
 const App = () => {
@@ -16,6 +18,9 @@ const App = () => {
       <Routes>
         <Route path='/' element= {<Home/>}/>
         <Route path='/rooms' element= {<AllRooms/>}/>
+        <Route path='/rooms/:id' element= {<Roomdetails />}/>
+      
+
       </Routes>
     </div>
  

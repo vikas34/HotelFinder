@@ -70,7 +70,7 @@ const Navbar = () => {
       <Link to="/" className="flex items-center gap-2">
         {
           <img
-            src={"logo.png"}
+            src={"/logo.png"}
             className=" w-34 sm:w-35 md:w-45 lg:w-48 xl:w-48 p-3 max-w-full h-auto"
           />
         }

@@ -108,9 +108,11 @@ const AllRooms = () => {
                   </div>
                 ))}
               </div>
-              <p className="text-xl font-medium text-gray-700">
+              <p className="w-fit px-4 py-2 text-md font-medium text-gray-700  rounded-lg  bg-slate-100">
                 ${room.pricePerNight}/night
               </p>
+              
+
             </div>
           </div>
         ))}

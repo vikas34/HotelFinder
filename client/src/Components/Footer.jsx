@@ -3,10 +3,10 @@ import { assets } from "../assets/assets";
 
 const Footer = () => {
   return (
-    <div className=" bg-[#e8eff8] text-gray-500/80 pt-8 px-6 md:px-16 lg:px-24 xl:px-32 mt-2">
+    <div className=" bg-[#e8eff8] text-gray-700/80 pt-8 px-6 md:px-16 lg:px-24 xl:px-32 mt-2">
       <div className="flex flex-wrap justify-between gap-12 md:gap-6">
         <div className="max-w-80">
-          <img src="logo.png" alt="logo" className="mb-4 h-8 md:h-9" />
+          <img src="/logo.png" alt="logo" className="mb-4 h-8 md:h-9" />
           <p className="text-sm">
             Discover the world most extraordinary places to stay, from boutique
             hotels to luxury villas abd private islands.
@@ -14,22 +14,22 @@ const Footer = () => {
           <div className="flex items-center gap-2 mt-4 ">
             {/* Instagram */}
             <img
-              src="instagram.png"
+              src="/instagram.png"
               alt=" instagram"
               className="w-6 sm:w-7 cursor-pointer"
             />
             <img
-              src="facebook.png"
+              src="/facebook.png"
               alt=" facebook"
-              className="w-6 sm:w-7 cursor-pointer"sm:w-7 
+              className="w-6 sm:w-7 cursor-pointer" 
             />
             <img
-              src="twitter.png"
+              src="/twitter.png"
               alt=" twitter"
               className="w-6 sm:w-7 cursor-pointer"
             />
             <img
-              src="linkedin.png"
+              src="/linkedin.png"
               alt=" linkdin"
               className="w-6 sm:w-7  cursor-pointer"
             />
