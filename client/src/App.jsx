@@ -5,6 +5,7 @@ import Home from './Pages/Home.jsx'
 import Footer from './Components/Footer.jsx'
 import AllRooms from './Pages/AllRooms.jsx'
 import Roomdetails from './Pages/Roomdetails.jsx'
+import MyBookings from './Pages/MyBookings.jsx'
 
 
 
@@ -19,6 +20,7 @@ const App = () => {
         <Route path='/' element= {<Home/>}/>
         <Route path='/rooms' element= {<AllRooms/>}/>
         <Route path='/rooms/:id' element= {<Roomdetails />}/>
+        <Route path='/my-bookings' element= {<MyBookings/>}/>
       
 
       </Routes>
