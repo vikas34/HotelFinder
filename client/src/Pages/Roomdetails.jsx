@@ -62,7 +62,7 @@ const Roomdetails = () => {
                 alt="Room thumbnail"
                 className={`w-full rounded-xl shadow-md object-cover cursor-pointer ${
                   mainImage === image
-                    ? "outline outline-3 outline-orange-500"
+                    ? " outline-3 outline-orange-500"
                     : ""
                 }`}
               />
@@ -79,7 +79,7 @@ const Roomdetails = () => {
             {room.amenities.map((item, index) => (
               <div
                 key={index}
-                className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-100"
+                className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-100 text-center"
               >
                 <img src={facilityIcons[item]} alt={item} className="w-5 h-5" />
                 <p className="text-xs ">{item}</p>
@@ -89,7 +89,7 @@ const Roomdetails = () => {
         </div>
 
         {/* Room Price */}
-        <p className="text-2xl font-medium">${room.pricePerNight}/night</p>
+        <p className="font-medium text-gray-700 h-fit px-4 py-3 rounded-lg w-fit bg-slate-100 ">${room.pricePerNight}/night</p>
       </div>
       {/* CheckIn CjeckOut Form  */}
       <form
