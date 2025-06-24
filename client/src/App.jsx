@@ -7,6 +7,10 @@ import AllRooms from './Pages/AllRooms.jsx'
 import Roomdetails from './Pages/Roomdetails.jsx'
 import MyBookings from './Pages/MyBookings.jsx'
 import HotelReg from './Components/HotelReg.jsx'
+import LayOut from './Pages/hotelOwner/LayOut.jsx'
+import DashBoard from './Pages/hotelOwner/DashBoard.jsx'
+import AddRoom from './Pages/hotelOwner/AddRoom.jsx'
+import ListRoom from './Pages/hotelOwner/ListRoom.jsx'
 
 
 
@@ -23,6 +27,13 @@ const App = () => {
         <Route path='/rooms' element= {<AllRooms/>}/>
         <Route path='/rooms/:id' element= {<Roomdetails />}/>
         <Route path='/my-bookings' element= {<MyBookings/>}/>
+
+        <Route path='/owner' element={<LayOut/>}> 
+               <Route index element={<DashBoard/>}/>
+               <Route path='add-room' element={<AddRoom/>}/>
+               <Route path='list-room' element={<ListRoom/>}/>
+
+        </Route>
       
 
       </Routes>
