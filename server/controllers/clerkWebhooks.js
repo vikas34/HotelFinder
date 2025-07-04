@@ -1,4 +1,4 @@
-import { json } from "express";
+
 import User from "../models/user.js";
 import { Webhook } from "svix";   //toGet user data
 
@@ -16,7 +16,7 @@ const clerkWebhooks = async (req, res) => {
 
     //Verifying Header
 
-    await whook.verify(json.stringify(req.body), headers);
+    await whook.verify(JSON.stringify(req.body), headers);
 
     //Getting Data from Request Body
 
