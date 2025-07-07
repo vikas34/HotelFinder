@@ -1,29 +1,56 @@
 import express from "express";
+import dotenv from "dotenv";
 import cors from "cors";
+import bodyParser from "body-parser";
 import connectDB from "./configs/db.js";
 import { clerkMiddleware } from "@clerk/express";
 import clerkWebhooks from "./controllers/clerkWebhooks.js";
 
+
+dotenv.config();
 connectDB();
 
 const app = express();
-app.use(cors()); //Enable cross origin Resourse Sharing
+app.use(cors());
 
-//MiddleWare
-app.use(express.json());
-app.use(clerkMiddleware());
+// ✅ Clerk auth middleware for protected routes (optional)
+app.use(
+  clerkMiddleware({
+    publishableKey: process.env.CLERK_PUBLISHABLE_KEY,
+    secretKey: process.env.CLERK_SECRET_KEY,
+  })
+);
 
-//api to listen to clerk Webhooks
-
-app.post("/api/clerk",
-  express.raw({ type: "application/json" }), // must come *before* the handler
+// ✅ Clerk webhook must use raw body!
+app.post(
+  "/api/clerk",
+  bodyParser.raw({ type: "application/json" }),
   clerkWebhooks
 );
- // use POST not use() here
 
-app.get("/", (req, res) => res.send("Api is Working fine"));
+// ✅ JSON body for normal routes AFTER webhook route
+app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.send("API is working fine!");
+});
+
+// ✅ Test DB route
+// app.get("/api/test-create-user", async (req, res) => {
+//   try {
+//     const user = await User.create({
+//       _id: "test_" + Date.now(),
+//       username: "Test User",
+//       email: "test@example.com",
+//       image: "https://example.com/avatar.png",
+//       recentSearchedCities: ["Delhi"],
+//     });
+//     res.json({ success: true, user });
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).json({ success: false, message: err.message });
+//   }
+// });
 
 const PORT = process.env.PORT || 8000;
-app.listen(PORT, () => {
-  console.log(`server running on PORT No ${PORT}`);
-});
+app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
