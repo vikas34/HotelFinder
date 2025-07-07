@@ -15,7 +15,11 @@ app.use(clerkMiddleware());
 
 //api to listen to clerk Webhooks
 
-app.post("/api/clerk", clerkWebhooks); // use POST not use() here
+app.post("/api/clerk",
+  express.raw({ type: "application/json" }), // must come *before* the handler
+  clerkWebhooks
+);
+ // use POST not use() here
 
 app.get("/", (req, res) => res.send("Api is Working fine"));
 
